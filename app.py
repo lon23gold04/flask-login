@@ -5,10 +5,12 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     username = request.args.get("username")
+    password = request.args.get("password")
+    print(username)
+    print(password)
     if username == None:
-        print(username)
         return render_template("index.html")
-    elif username == "admin":
+    elif username == "admin" and password == "admin123":
         return "<h1>Admin</h1>"
     else:
-        return "<h1>User does not exist.</h1>"
+        return "<h1>User unrecognised.</h1>"
