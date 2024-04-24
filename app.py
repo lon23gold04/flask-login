@@ -15,3 +15,14 @@ def index():
             return "<h1>Admin</h1>"
         else:
             return "<h1>User unrecognised.</h1>"
+
+@app.route('/register', methods=["GET", "POST"])
+def register():
+    if request.method == "GET":
+        return render_template("register.html")
+    elif request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        print(username)
+        print(password)
+        return "Registered"
