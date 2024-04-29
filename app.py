@@ -30,7 +30,7 @@ def register():
         print(password)
         print(confirm_password)
         if password == confirm_password:
-            with open("users.txt", "a+") as file:
+            with open("users.txt", "a") as file:
                 file.write(f"{username}\n{password}\n\n")
             return "Successfully registered."
         else:
